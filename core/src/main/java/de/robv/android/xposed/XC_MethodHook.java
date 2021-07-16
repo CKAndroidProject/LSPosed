@@ -20,6 +20,8 @@
 
 package de.robv.android.xposed;
 
+import org.lsposed.lspd.hooker.LSPMethodCallback;
+
 import java.lang.reflect.Member;
 
 import de.robv.android.xposed.callbacks.IXUnhook;
@@ -31,7 +33,7 @@ import de.robv.android.xposed.callbacks.XCallback;
  * <p>Usually, anonymous subclasses of this class are created which override
  * {@link #beforeHookedMethod} and/or {@link #afterHookedMethod}.
  */
-public abstract class XC_MethodHook extends XCallback {
+public abstract class XC_MethodHook extends LSPMethodCallback {
     /**
      * Creates a new callback with default priority.
      */

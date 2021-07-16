@@ -18,12 +18,15 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed;
+package org.lsposed.lspd.hooker;
 
 import java.lang.reflect.Executable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+
+import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedBridge;
 
 public class LspHooker {
     private final XposedBridge.AdditionalHookInfo additionalInfo;
@@ -70,7 +73,7 @@ public class LspHooker {
         int beforeIdx = 0;
         do {
             try {
-                ((XC_MethodHook) callbacksSnapshot[beforeIdx]).beforeHookedMethod(param);
+                ((LSPMethodCallback) callbacksSnapshot[beforeIdx]).beforeHookedMethod(param);
             } catch (Throwable t) {
                 XposedBridge.log(t);
 
@@ -103,7 +106,7 @@ public class LspHooker {
             Throwable lastThrowable = param.getThrowable();
 
             try {
-                ((XC_MethodHook) callbacksSnapshot[afterIdx]).afterHookedMethod(param);
+                ((LSPMethodCallback) callbacksSnapshot[afterIdx]).afterHookedMethod(param);
             } catch (Throwable t) {
                 XposedBridge.log(t);
 

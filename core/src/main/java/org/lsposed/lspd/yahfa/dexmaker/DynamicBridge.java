@@ -20,6 +20,7 @@
 
 package org.lsposed.lspd.yahfa.dexmaker;
 
+import org.lsposed.lspd.hooker.LspHooker;
 import org.lsposed.lspd.util.Utils;
 
 import java.lang.reflect.Executable;
@@ -27,7 +28,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Member;
 import java.util.concurrent.ConcurrentHashMap;
 
-import de.robv.android.xposed.LspHooker;
 import de.robv.android.xposed.XposedBridge;
 
 public final class DynamicBridge {

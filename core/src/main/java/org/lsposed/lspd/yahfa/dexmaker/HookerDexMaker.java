@@ -21,6 +21,7 @@
 package org.lsposed.lspd.yahfa.dexmaker;
 
 import org.lsposed.lspd.core.yahfa.HookMain;
+import org.lsposed.lspd.hooker.LspHooker;
 import org.lsposed.lspd.nativebridge.Yahfa;
 import org.lsposed.lspd.util.Utils;
 
@@ -30,7 +31,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 
-import de.robv.android.xposed.LspHooker;
 import de.robv.android.xposed.XposedBridge;
 
 @SuppressWarnings("rawtypes")
